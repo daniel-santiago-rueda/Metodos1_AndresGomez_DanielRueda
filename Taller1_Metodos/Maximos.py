@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-archivo = open("EstrellaEspectro.txt", mode="r")
+archivo = open("Taller1_Metodos/EstrellaEspectro.txt", mode="r")
 
 #El archivo tiene 197 lineas
 coords = np.zeros((197,2))
