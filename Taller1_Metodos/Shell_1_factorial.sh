@@ -10,7 +10,7 @@ n=$1
 typeset -i factorial=1
 
 if [ $n -eq 0 ] || [ $n -eq 1 ]; then
-	echo $1 $factorial 
+	echo $1 $factorial
 else
 	while [ $n -gt 1 ]
 	do

@@ -5,11 +5,11 @@ echo calculando factorial de $n
 function factorial(){
 	local producto=1
 	for i in $(seq 1 1 $n)
-	do	
+	do
 		producto=$(($producto*$i))
 	done
 	let fact=$producto
-	
+
 }
 
 
