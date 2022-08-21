@@ -20,16 +20,16 @@ while len(primos)<1000:
     if EsPrimo(n):
         primos.append(n)
     n+=1
-print("¡Calculados!")
+print("¡Calculados!\n")
 
 #Parte (b)
-print("Los primeros 10 primos son: \n")
+print("Los primeros 10 primos son:")
 for i in range(10):
-    print(primos[i])
+    print(str(i+1)+": "+str(primos[i]))
 
 #Parte (c)
 plt.figure(figsize=(8, 5))
-plt.plot(range(1000), primos, color='r')
+plt.plot(primos, color='r')
 plt.title("Distribución de los primeros 1000 primos")
 plt.xlabel("Posición")
 plt.ylabel("Primos")
