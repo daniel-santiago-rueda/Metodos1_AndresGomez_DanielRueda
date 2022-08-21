@@ -1,3 +1,4 @@
+#!/bin/bash
 echo -n "Ingrese un número entero positivo: "
 read n
 echo calculando factorial de $n
