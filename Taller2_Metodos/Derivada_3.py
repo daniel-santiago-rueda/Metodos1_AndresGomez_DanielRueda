@@ -7,8 +7,8 @@ h = 0.05
 
 mascara = [1.0, 0.0, -1.0]
 
-#Se calcula la derivda central en cada punto como una sumatoria de 
-#la máscara de convolución por los puntos adyacentes
+#Se calcula la derivada central en cada punto como una sumatoria de 
+#la máscara de convolución evaluada en los puntos adyacentes
 def CentralDerivative(x, f, h):
     sum = 0
     for i in mascara:
