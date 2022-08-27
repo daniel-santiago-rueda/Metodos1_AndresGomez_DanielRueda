@@ -5,7 +5,7 @@ x = np.linspace(-10, 10, 400)
 function = lambda x: 1/(np.sqrt(1+np.exp(-x**2)))
 h = 0.05
 
-#Parte (c), se calcula la derivada central de la función
+#Parte (a), se calcula la derivada central de la función
 def CentralDerivative(x, f, h):
     return (f(x+h)-f(x-h))/(2*h)
 
