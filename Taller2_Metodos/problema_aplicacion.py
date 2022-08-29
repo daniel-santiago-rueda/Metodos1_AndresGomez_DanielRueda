@@ -21,8 +21,8 @@ def get_campo_velocidades(x, y):
     for i in range(25):
         for j in range(25):
             if (x[i]**2 + y[j]**2) > 4:
-                v_x[i,j] = round(derivada_parcialx(x[i], y[j], h), 5)
-                v_y[i,j] = round(-derivada_parcialy(x[i], y[j], h), 5)
+                v_x[i,j] = round(derivada_parcialx(x[i], y[j], h), 6)
+                v_y[i,j] = round(-derivada_parcialy(x[i], y[j], h), 6)
 
             else:
                 v_x[i,j] = 0
