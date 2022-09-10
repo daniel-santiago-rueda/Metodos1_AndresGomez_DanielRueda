@@ -1,19 +1,20 @@
 import numpy as np
-import sympy as sym
 
-x = sym.Symbol('x', real=True)
-f = 3*x**5 + 5*x**4 - x**3
+def function(x):
+    return 3*x**5 + 5*x**4 - x**3
 
-def metodo_newton_raphson(f, Df, xn, itmax=1000, precision=1e-15):
+def central_derivative(f, x, h=1e-7):
+    return (f(x+h) - f(x-h))/(2*h)
+
+def metodo_newton_raphson(f, Df, xn, itmax=1000, precision=1e-8):
     error = 1
     it=0
 
     while error > precision and it < itmax:
 
         try:
-
-            xn_mas1 = xn - f(xn)/Df(xn)
-            error = np.abs(f(xn)/Df(xn))
+                xn_mas1 = xn - f(xn)/Df(f, xn)
+                error = np.abs(f(xn)/Df(f, xn))
 
         except ZeroDivisionError:
             print('Error: Division por cero')
@@ -26,11 +27,11 @@ def metodo_newton_raphson(f, Df, xn, itmax=1000, precision=1e-15):
 
     return xn
 
-def calcular_raices(funcion, Df, x_prueba, tolerancia=14):
+def calcular_raices(f, Df, x_prueba, tolerancia=7):
     raices = np.array([])
 
     for x in x_prueba:
-        raiz = metodo_newton_raphson(funcion, Df, x)
+        raiz = metodo_newton_raphson(f, Df, x)
 
         if raiz != False:
             raiz = np.round(raiz, tolerancia)
@@ -46,7 +47,7 @@ def calcular_raices(funcion, Df, x_prueba, tolerancia=14):
     return raices
 
 x_prueba = np.linspace(-10,10,100)
-raices = calcular_raices(sym.lambdify(x, f, 'numpy'), sym.lambdify(x, sym.diff(f), 'numpy'), x_prueba)
+raices = calcular_raices(function, central_derivative, x_prueba)
 
-np.set_printoptions(precision=14)
+np.set_printoptions(precision=15)
 print(raices)
