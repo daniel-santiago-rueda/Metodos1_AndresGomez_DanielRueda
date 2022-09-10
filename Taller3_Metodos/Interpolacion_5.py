@@ -4,15 +4,7 @@ import pandas as pd
 import os.path as path
 import wget
 
-
-file = 'InterpolacionNewtonNoequi.csv'
-url = 'https://raw.githubusercontent.com/asegura4488/Database/main/MetodosComputacionalesReforma/InterpolacionNewtonNoequi.csv'
-if not path.exists(file):
-    Path_ = wget.download(url, file)
-else:
-    Path_ = file
-
-Data = pd.read_csv(Path_, sep=',')
+Data = pd.read_csv('Taller3_Metodos/InterpolacionNewtonNoequi.csv', sep=',')
 
 X = np.float64(Data['X'])
 Y = np.float64(Data['Y'])
