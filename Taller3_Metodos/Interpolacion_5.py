@@ -17,15 +17,15 @@ Data = pd.read_csv(Path_, sep=',')
 X = np.float64(Data['X'])
 Y = np.float64(Data['Y'])
 
-def NewtonGregoryNoequi(X, Y, x):    
+def NewtonGregoryNoequi(X, Y, x):
     '''
-    Calcula el polinomio de interpolación de Newton-Gregory para 
+    Calcula el polinomio de interpolación de Newton-Gregory para
     puntos no equidistantes.
     '''
-    Sum_ = Y[0]   
+    Sum_ = Y[0]
     poly = 1.0
     slope = 0.0
-    
+
     for i in range(1, len(X)):
         poly *= (x-X[i-1])
         slope = GetSlope(X,Y,i-1,i)

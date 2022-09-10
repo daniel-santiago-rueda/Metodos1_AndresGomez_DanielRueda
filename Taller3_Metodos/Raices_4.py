@@ -55,4 +55,3 @@ roots = GetAllRoots(n)
 print("\nLas " +str(n)+" raíces del polinomio de grado "  + str(n) + " de Legendre son: ")
 for root in roots:
     print(str(root))
-
