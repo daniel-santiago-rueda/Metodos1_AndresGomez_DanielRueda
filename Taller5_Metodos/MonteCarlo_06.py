@@ -27,10 +27,11 @@ def get_points(n, r=1):
 
     return X, Y, Z
 
-n_ = int(float(input("Ingrese el número de puntos que quiere utilizar para la estimación: ")))
-sample = f(get_points(n_))
+N = int(1e6)
+sample = f(get_points(N))
 
 integral = (4/3)*np.pi*np.average(sample)
 
-print("Valor Aproximado: " + str(integral) + "\n" + "Valor Exacto: " + str(4*np.pi*(np.e-2)))
-#TODO preguntar si truncar valor aprox con 1/sqrt(n) y/o se reporta 1/sqrt(n)
+print("Para la aproximación se utilizaron 10^6 puntos.\n")
+print("Valor exacto: " + str(4*np.pi*(np.e-2)) + "\n" + "Valor aproximado sin tomar en cuenta precisión: "\
+    + str(integral) + "\n" + "Valor aproximado con las dos cifras de precisión: " + str(integral)[:4])
