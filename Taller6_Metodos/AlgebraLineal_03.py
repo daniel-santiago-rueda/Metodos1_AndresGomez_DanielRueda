@@ -1,7 +1,4 @@
-from stat import FILE_ATTRIBUTE_SPARSE_FILE
-import matplotlib.pyplot as plt
 import numpy as np
-from tqdm import tqdm
 
 def MatrixMultiplication(A, B):
     filas_a = np.size(A, 0)
