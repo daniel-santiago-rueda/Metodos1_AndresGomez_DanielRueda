@@ -16,12 +16,10 @@ def GetGaussSeidelMethod(A, b, itmax=1000, error=1e-10):
             sum_ = 0
             for j in range(columnas_a):
                 if i!=j:
-                    print(A[i][j])
                     sum_ += A[i][j]*x[j]
                 sumk[i]=sum_
                 if A[i][i] != 0:
                     x[i] = (b[i] - sumk[i])/A[i,i]
-                    print(x[i])
                 else:
                     print('No fue posible determinar la solución.')
         residuo = np.linalg.norm(b-np.dot(A,x))
