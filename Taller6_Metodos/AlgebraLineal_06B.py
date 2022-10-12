@@ -1,4 +1,3 @@
-from subprocess import list2cmdline
 import numpy as np
 
 G=(lambda x,y,z: 6*x-2*np.cos(y*z)-1, \
