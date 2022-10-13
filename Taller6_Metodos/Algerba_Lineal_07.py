@@ -98,13 +98,11 @@ Z = np.zeros(10**3)
 
 for i in tqdm(range(10**3)):
     point = np.random.uniform(-1,1,4)
-    xsol,it,F,R = GetSolve(G,point,lr=1e-4)
+    xsol,it,F,R = GetSolve(G,point,lr=1e-3)
 
-    if it < int(1e5):
-        X = np.append(X, xsol[0])
-        Y = np.append(Y, xsol[1])
-        Z = np.append(Z, xsol[2])
-print(X,Y,Z)
+    X[i] = xsol[0]
+    Y[i] = xsol[1]
+    Z[i] = xsol[2]
 
 fig = plt.figure(figsize=(8,8))
 ax = fig.add_subplot(1,1,1, projection = '3d')
@@ -116,3 +114,4 @@ ax.set_zlim3d(-1.5, 1.5)
 ax.view_init(10, 60)
 
 ax.scatter(X,Y,Z,color='b')
+plt.show()
